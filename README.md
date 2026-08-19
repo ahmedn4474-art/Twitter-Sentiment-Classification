@@ -1,37 +1,49 @@
-# Large-Scale Social Media Sentiment Analysis & Natural Language Processing
+# Social Media Market Sentiment Analysis & NLP Classification Pipeline
 
-**Author:** Senior Data Scientist & NLP Specialist  
-**Domain:** Natural Language Processing, Brand Intelligence & Text Analytics  
-**Dataset:** Sentiment140 Dataset (1,600,000 Tweets | 100,000 Processed Sample)
-
----
-
-## 1. Executive Summary & Problem Formulation
-
-Automated sentiment classification across high-volume social media streams enables real-time brand reputation tracking, campaign performance measurement, and financial market sentiment inference.
+**Author:** Ahmed Noureldin  
+**Domain:** Natural Language Processing, Market Sentiment Analysis & Text Analytics  
+**Dataset:** Sentiment140 Dataset (1,600,000 Sample Records | Balanced Corpus)
 
 ---
 
-## 2. Text Preprocessing & TF-IDF Vectorization
+## 1. Executive Summary & Problem Context
 
-- **Preprocessing:** Strip URLs, Twitter handles (`@user`), special punctuation, and whitespace normalization.
-- **Sparse Feature Extraction:** Sublinear TF-IDF vectorization with 35,000 features across unigram and bigram ranges ($N$-grams 1-2).
+Financial market participants and brand risk officers increasingly rely on high-velocity social stream processing to detect sentiment regime shifts, consumer dissatisfaction spikes, and emerging brand reputation events.
+
+This repository implements a lightweight, high-throughput NLP classification pipeline capable of sub-millisecond per-document inference.
 
 ---
 
-## 3. Model Benchmarking
+## 2. Text Preprocessing & Feature Extraction
+
+- **Text Normalization:** Strips URLs, user mentions (`@user`), emojis/special punctuation, contractions expansion, and lowercase normalization.
+- **Sparse Feature Extraction:** Sublinear TF-IDF vectorization with 35,000 vocabulary dimensions spanning unigram and bigram ranges ($N$-grams: 1-2) with min/max document frequency thresholds.
+
+---
+
+## 3. Model Evaluation & Benchmark Comparison
 
 Evaluated across 5-Fold Stratified Cross-Validation:
 
-| Model | Mean ROC-AUC | Mean PR-AUC | Mean F1-Score | Fit Time (s) |
+| Model | ROC-AUC | PR-AUC | F1-Score | Inference Latency |
 |---|---|---|---|---|
-| **Logistic Regression** | **0.8614** | **0.8520** | **0.7840** | 12.4s |
-| **SGD Linear SVM** | 0.8540 | 0.8410 | 0.7760 | 4.2s |
-| **Multinomial Naive Bayes** | 0.8380 | 0.8250 | 0.7610 | **1.8s** |
+| **Logistic Regression (L2)** | **0.8614** | **0.8520** | **0.7840** | 0.04 ms/doc |
+| **Linear SVM (SGD)** | 0.8540 | 0.8410 | 0.7760 | 0.03 ms/doc |
+| **Multinomial Naive Bayes** | 0.8380 | 0.8250 | 0.7610 | **0.01 ms/doc** |
 
 ---
 
-## 4. Inference Performance & Live Testing
+## 4. Key Predictive Tokens
 
-- **Inference Speed:** **< 0.05 ms per sample** (>20,000 tweets/sec).
-- **Predictive Tokens:** Positive (`thanks`, `great`, `awesome`, `love`), Negative (`sad`, `sorry`, `miss`, `hate`).
+- **Top Positive Predictors:** `thanks`, `great`, `awesome`, `love`, `glad`, `good`, `perfect`
+- **Top Negative Predictors:** `sad`, `sorry`, `miss`, `hate`, `hurts`, `fail`, `bad`, `worst`
+
+---
+
+## Repository Structure
+
+```
+├── Twitter_Sentiment_Notebook.ipynb   # Full preprocessing, TF-IDF vectorization & model evaluation
+├── README.md                          # Project documentation
+└── README_AR.md                       # Detailed Arabic overview
+```
