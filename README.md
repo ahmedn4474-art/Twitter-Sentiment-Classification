@@ -1,49 +1,49 @@
-# Social Media Market Sentiment Analysis & NLP Classification Pipeline
+# Social Media Market Sentiment Analysis & NLP Classification
 
 **Author:** Ahmed Noureldin  
-**Domain:** Natural Language Processing, Market Sentiment Analysis & Text Analytics  
-**Dataset:** Sentiment140 Dataset (1,600,000 Sample Records | Balanced Corpus)
+**Affiliation:** Accounting Scholar (Year 3), New Cairo Higher Institute | Ex-CIB Data Analytics Intern  
+**Email:** ahmedn4474@gmail.com | **GitHub:** [@ahmedn4474-art](https://github.com/ahmedn4474-art/Twitter-Sentiment-Classification)  
+**Domain:** Natural Language Processing (NLP), Sentiment Mining & Text Analytics  
+**Dataset:** Sentiment140 Corpus (Sampled 50,000 balanced benchmark records & Full 1.6M pipeline)  
 
 ---
 
 ## 1. Executive Summary & Problem Context
 
-Financial market participants and brand risk officers increasingly rely on high-velocity social stream processing to detect sentiment regime shifts, consumer dissatisfaction spikes, and emerging brand reputation events.
-
-This repository implements a lightweight, high-throughput NLP classification pipeline capable of sub-millisecond per-document inference.
+Financial markets and consumer brands generate high-volume text streams on social platforms. This project implements a lightweight NLP classification pipeline using text normalization, sublinear TF-IDF vectorization, and regularized Logistic Regression capable of high-throughput inference.
 
 ---
 
-## 2. Text Preprocessing & Feature Extraction
+## 2. Project Structure
 
-- **Text Normalization:** Strips URLs, user mentions (`@user`), emojis/special punctuation, contractions expansion, and lowercase normalization.
-- **Sparse Feature Extraction:** Sublinear TF-IDF vectorization with 35,000 vocabulary dimensions spanning unigram and bigram ranges ($N$-grams: 1-2) with min/max document frequency thresholds.
-
----
-
-## 3. Model Evaluation & Benchmark Comparison
-
-Evaluated across 5-Fold Stratified Cross-Validation:
-
-| Model | ROC-AUC | PR-AUC | F1-Score | Inference Latency |
-|---|---|---|---|---|
-| **Logistic Regression (L2)** | **0.8614** | **0.8520** | **0.7840** | 0.04 ms/doc |
-| **Linear SVM (SGD)** | 0.8540 | 0.8410 | 0.7760 | 0.03 ms/doc |
-| **Multinomial Naive Bayes** | 0.8380 | 0.8250 | 0.7610 | **0.01 ms/doc** |
+`	ext
+|-- data/                    # Dataset files
+|-- Twitter_Sentiment_Notebook.ipynb   # Executed Jupyter Notebook with complete outputs
+|-- requirements.txt         # Python dependencies
+|-- README.md                # English technical documentation
+|-- README_AR.md             # التوثيق الفني باللغة العربية
+`
 
 ---
 
-## 4. Key Predictive Tokens
+## 3. How to Run Locally
 
-- **Top Positive Predictors:** `thanks`, `great`, `awesome`, `love`, `glad`, `good`, `perfect`
-- **Top Negative Predictors:** `sad`, `sorry`, `miss`, `hate`, `hurts`, `fail`, `bad`, `worst`
+1. **Clone this repository:**
+   `ash
+   git clone https://github.com/ahmedn4474-art/Twitter-Sentiment-Classification.git
+   cd Project2_Twitter_Sentiment
+   `
+
+2. **Install dependencies:**
+   `ash
+   pip install -r requirements.txt
+   `
+
+3. **Launch Jupyter Notebook:**
+   `ash
+   jupyter notebook Twitter_Sentiment_Notebook.ipynb
+   `
 
 ---
 
-## Repository Structure
-
-```
-├── Twitter_Sentiment_Notebook.ipynb   # Full preprocessing, TF-IDF vectorization & model evaluation
-├── README.md                          # Project documentation
-└── README_AR.md                       # Detailed Arabic overview
-```
+*Authored by Ahmed Noureldin Mohamed — Applied Quantitative & Financial Data Analytics.*
