@@ -1,49 +1,64 @@
-# Social Media Market Sentiment Analysis & NLP Classification
+# Twitter Sentiment Classification
 
-**Author:** Ahmed Noureldin  
-**Affiliation:** Accounting Scholar (Year 3), New Cairo Higher Institute | Ex-CIB Data Analytics Intern  
-**Email:** ahmedn4474@gmail.com | **GitHub:** [@ahmedn4474-art](https://github.com/ahmedn4474-art/Twitter-Sentiment-Classification)  
-**Domain:** Natural Language Processing (NLP), Sentiment Mining & Text Analytics  
-**Dataset:** Sentiment140 Corpus (Sampled 50,000 balanced benchmark records & Full 1.6M pipeline)  
+A natural language processing project for analyzing text sentiment and understanding public opinion from social media content.
 
----
+## Overview
 
-## 1. Executive Summary & Problem Context
+This project focuses on collecting and processing social media text data to classify sentiment as positive, negative, or neutral. It demonstrates how NLP techniques can help businesses interpret customer opinion, brand perception, and public reaction in real time.
 
-Financial markets and consumer brands generate high-volume text streams on social platforms. This project implements a lightweight NLP classification pipeline using text normalization, sublinear TF-IDF vectorization, and regularized Logistic Regression capable of high-throughput inference.
+## Problem Statement
 
----
+Social media produces massive amounts of unstructured text, making it difficult to understand public sentiment without automated analysis. Businesses need tools that can turn large-scale textual content into usable insight.
 
-## 2. Project Structure
+## Objectives
 
-`	ext
-|-- data/                    # Dataset files
-|-- Twitter_Sentiment_Notebook.ipynb   # Executed Jupyter Notebook with complete outputs
-|-- requirements.txt         # Python dependencies
-|-- README.md                # English technical documentation
-|-- README_AR.md             # التوثيق الفني باللغة العربية
-`
+- Preprocess text data for model readiness
+- Extract meaningful features from social media text
+- Build a sentiment classification pipeline
+- Evaluate model performance and interpret outcomes
 
----
+## Tech Stack
 
-## 3. How to Run Locally
+- Python
+- Pandas
+- NumPy
+- NLTK
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
-1. **Clone this repository:**
-   `ash
-   git clone https://github.com/ahmedn4474-art/Twitter-Sentiment-Classification.git
-   cd Project2_Twitter_Sentiment
-   `
+## Methodology
 
-2. **Install dependencies:**
-   `ash
-   pip install -r requirements.txt
-   `
+1. Text cleaning and normalization
+2. Tokenization and preprocessing
+3. Feature extraction and text representation
+4. Model training and validation
+5. Sentiment interpretation and reporting
 
-3. **Launch Jupyter Notebook:**
-   `ash
-   jupyter notebook Twitter_Sentiment_Notebook.ipynb
-   `
+## Business Impact
 
----
+This project is relevant for social listening, customer experience analysis, brand monitoring, and market sentiment understanding. It shows how NLP can convert raw public conversations into strategic insight.
 
-*Authored by Ahmed Noureldin Mohamed — Applied Quantitative & Financial Data Analytics.*
+## Repository Structure
+
+- `data/` — sentiment datasets
+- `Twitter_Sentiment_Notebook.ipynb` — notebook analysis
+- `requirements.txt` — dependencies
+- `README.md` — documentation
+
+## Run Locally
+
+```bash
+git clone https://github.com/ahmedn4474-art/Twitter-Sentiment-Classification.git
+cd Twitter-Sentiment-Classification
+pip install -r requirements.txt
+jupyter notebook Twitter_Sentiment_Notebook.ipynb
+```
+
+## Contact
+
+- GitHub: https://github.com/ahmedn4474-art
+- Email: ahmedn4474@gmail.com
+
+"Sentiment analysis turns noisy conversation into actionable business intelligence."
